@@ -1,8 +1,8 @@
 def is_number(input_string):
-    if isinstance(input_string, (int, float, str)):
-        try:
-            float(input_string)
-            return True
-        except ValueError:
-            return False
+    if isinstance(input_string, str):
+        return input_string.isnumeric()
+
+    if isinstance(input_string, (int, float)):
+        return True
+
     return False
