@@ -27,7 +27,7 @@ This repo contains the following Pants targets:
 
 In the pants world, you can run `pants dependents --transitive`
 ([reference link](https://www.pantsbuild.org/2.21/docs/using-pants/project-introspection#dependents---find-which-targets-depend-on-a-target))
-to see pants output the specific targets that each module is dependant on
+to see pants output the specific targets that each module is dependent on
 
 ## Calculating Impacted Targets
 
@@ -46,7 +46,7 @@ Broken down:
 
 - `--changed-since=origin/${MERGE_INSTANCE_BRANCH}` will make Pants only consider targets that have
   changed directly between the current PR and the branch Merge Queue will merge the PR into
-- `--changed-dependents=transitive` will also make Pants include the targets that are dependant on
+- `--changed-dependents=transitive` will also make Pants include the targets that are dependent on
   the directly changed targets above
 - `list` will list out the changed targets and their dependents
 
