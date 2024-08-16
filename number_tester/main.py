@@ -1,9 +1,9 @@
-from number_tester.is_prime import is_prime
+from number_tester.is_even_or_odd.is_even_or_odd import is_even_or_odd
 
 
 def try_numbers():
     for i in range(1, 101):
-        print(f"{i} is prime: {is_prime.is_prime(i)}")
+        print(f"{i} is even or odd: {is_even_or_odd(i)}")
 
 
 if __name__ == "__main__":
