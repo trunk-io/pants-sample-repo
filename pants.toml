@@ -1,7 +1,7 @@
 [GLOBAL]
 pants_version = "2.21.1"
 
-backend_packages.add = ["pants.backend.python"]
+backend_packages.add = ["pants.backend.python", "pants.backend.project_info"]
 
 [source]
 # The Python source root is the repo root. See https://www.pantsbuild.org/docs/source-roots.

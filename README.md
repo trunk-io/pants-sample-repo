@@ -40,7 +40,7 @@ as it understands git.
 Knowing this, you can generate a list of impacted targets to send to Merge Queue with the following
 command assuming you currently have the PR's branch checked out:
 
-`pants --changed-since=origin/${MERGE_INSTANCE_BRANCH} --changed-dependents=transitive dependents --transitive`
+`pants --changed-since=origin/${MERGE_INSTANCE_BRANCH} --changed-dependents=transitive list`
 
 Broken down:
 
@@ -48,11 +48,12 @@ Broken down:
   changed directly between the current PR and the branch Merge Queue will merge the PR into
 - `--changed-dependents=transitive` will also make Pants include the targets that are dependant on
   the directly changed targets above
-- `dependents --transitive` must be specified since Pants needs to be told a goal. This will make it
-  list out all targets and their dependents that were changed as a result of the PR.
+- `list` will list out the changed targets and their dependents
 
 This command will return a new-line delimited list than can then be
-[sent directly to Trunk](https://docs.trunk.io/merge-queue/parallel-queues/api)
+[sent directly to Trunk](https://docs.trunk.io/merge-queue/parallel-queues/api). If there are no
+targets changed, it'll instead output a warning log to `stderr`. To filter that out directly in
+bash, add `2>/dev/null` to the end of the command above.
 
 ## Testing Pants On This Repo
 
