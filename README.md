@@ -27,7 +27,7 @@ This repo contains the following Pants targets:
 
 In the pants world, you can run `pants dependents --transitive`
 ([reference link](https://www.pantsbuild.org/2.21/docs/using-pants/project-introspection#dependents---find-which-targets-depend-on-a-target))
-to see pants output the specific targets that each module is dependent on
+to see pants output the specific targets that each module has depending on it.
 
 ## Calculating Impacted Targets
 
